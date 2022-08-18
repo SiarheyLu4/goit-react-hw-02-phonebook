@@ -24,7 +24,7 @@ export class ContactForm extends Component {
 
     return (
       <Form onSubmit={onSubmit}>
-          <label>
+          <Label>
             Name
             <Input
               type="text"
@@ -32,11 +32,12 @@ export class ContactForm extends Component {
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
+              placeholder="Jacob Mercer"
               value={name}
               onChange={onChangeForm}
             />
-          </label>
-          <label>
+          </Label>
+          <Label>
             Number
             <Input
               type="tel"
@@ -44,11 +45,12 @@ export class ContactForm extends Component {
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
+              placeholder="123-45-67"
               value={number}
               onChange={onChangeForm}
             />
-          </label>
-          <button type="submit">Add contact</button>
+          </Label>
+          <Btm type="submit">Add contact</Btm>
         </Form>
     )
   }
@@ -57,11 +59,29 @@ export class ContactForm extends Component {
 const Form = styled.form`
   display: table-caption;
   margin: 12px;
-  border: 1px solid;
+  border: 2px solid grey;
+  border-radius: 12px;
   padding: 8px;
+`
+
+const Label = styled.label`
+  font-size: 20px;
 `
 
 const Input = styled.input`
   margin: 12px 0;
   padding: 4px;
+  border: 1px solid;
+  border-radius: 4px;
+`
+
+const Btm = styled.button`
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: darkgray;
+  &:hover {
+    background: #d3a6a6;
+  }
+
 `
