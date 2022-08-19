@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const ContactList = ({ getFilterContacts, deleteContact }) => {
@@ -34,3 +35,8 @@ const Ul = styled.ul`
 const Li = styled.li`
   padding: 2px 0;
 `
+
+ContactList.propTypes = {
+  getFilterContacts: PropTypes.func.isRequired,
+  deleteContact: PropTypes.func.isRequired
+}

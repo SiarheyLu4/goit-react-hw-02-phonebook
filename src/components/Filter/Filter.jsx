@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const Filter = ({value, onChange}) => {
@@ -27,3 +28,8 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
 `
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+}
